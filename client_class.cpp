@@ -8,6 +8,29 @@
 #include <unistd.h>
 #include <string.h>
 #define SERVER_PORT  12345
+class client
+{
+private:
+   /* data */
+public:
+   int    len, rc;
+   int    sockfd;
+   char   send_buf[80];
+   char   recv_buf[80];
+   struct sockaddr_in6   addr;
+   int PORT;
+   client(int);
+   ~client();
+};
+
+client::client(int port)
+{
+   PORT = 0;
+}
+
+client::~client()
+{
+}
 
 int main (int argc, char *argv[])
 {
